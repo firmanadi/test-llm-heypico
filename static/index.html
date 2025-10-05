@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LLM Location Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🗺️ Location Assistant</h1>
+            <p class="subtitle">AI-powered recommendations with Google Maps</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Chat Section -->
+            <div class="chat-section">
+                <div id="chat-messages" class="chat-messages"></div>
+
+                <div class="chat-input-container">
+                    <input
+                        type="text"
+                        id="user-input"
+                        placeholder="Ask for restaurant recommendations, directions, or places to visit..."
+                        autocomplete="off"
+                    >
+                    <button id="send-btn" onclick="sendMessage()">Send</button>
+                </div>
+
+                <div class="quick-actions">
+                    <button class="quick-btn" onclick="quickMessage('Find Italian restaurants near me')">
+                        🍝 Italian Restaurants
+                    </button>
+                    <button class="quick-btn" onclick="quickMessage('Show me coffee shops nearby')">
+                        ☕ Coffee Shops
+                    </button>
+                    <button class="quick-btn" onclick="quickMessage('Where can I find parks?')">
+                        🌳 Parks
+                    </button>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <div class="map-section">
+                <div id="map" class="map-container">
+                    <div class="map-placeholder">
+                        <p>🗺️ Map will appear here when you search for locations</p>
+                    </div>
+                </div>
+
+                <!-- Places List -->
+                <div id="places-list" class="places-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
